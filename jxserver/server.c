@@ -142,7 +142,7 @@ void listen_and_serve(Config *config, CompressionSegment *comp_dict,
             exit(EXIT_FAILURE);
         }
         // round robbin
-        thread_index = thread_index % n_handlers;
+        thread_index = (thread_index + 1) % n_handlers;
     }
 
     // reap handler threads
